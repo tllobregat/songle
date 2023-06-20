@@ -1,0 +1,116 @@
+@use '../variables' as *;
+@use '../keyframes' as *;
+
+#home-layout {
+  width: $content-width;
+  margin: 0 auto;
+  color: $primary-color;
+
+  .main-content {
+    h2 {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 25px;
+    }
+
+    .play-song {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .playing {
+        -webkit-animation: rotate 5s normal linear infinite;
+        animation: rotate 5s normal linear infinite;
+      }
+
+      img {
+        width: 150px;
+      }
+
+      button {
+        margin-left: 24px;
+        width: 120px;
+        height: 54px;
+        padding: 5px 15px;
+        border-radius: 5px;
+        background-color: $primary-color;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &:hover {
+          color: $background-color;
+
+          svg {
+            color: $background-color;
+          }
+        }
+
+        svg {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .guess-song {
+      &--disabled {
+        input {
+          cursor: not-allowed;
+        }
+      }
+
+      .MuiAutocomplete-root {
+        margin: 48px auto 0 auto;
+
+        .MuiFormLabel-root {
+          color: $primary-color;
+          border-color: $primary-color;
+        }
+
+        .MuiOutlinedInput-notchedOutline {
+          border: 1px solid $primary-color;
+        }
+
+        .MuiSvgIcon-root {
+          color: $primary-color;
+        }
+
+        input {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .guess-result {
+      margin: 15px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        margin-top: 24px;
+        background-color: green;
+        color: white;
+        width: 200px;
+        border: 1px solid white;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: $content-width;
+    border-top: 1px solid $primary-color;
+    text-align: center;
+    height: $footer-height;
+    padding-top: 10px;
+  }
+}

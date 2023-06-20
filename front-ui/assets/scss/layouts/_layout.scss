@@ -1,0 +1,56 @@
+@use '../variables' as *;
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  background-color: $background-color;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .content-layout {
+    height: calc(100vh - $header-height - $footer-height);
+    overflow: auto;
+    flex-grow: 1;
+  }
+
+  .popin-help-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .popin-help {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding: 25px;
+  }
+}
+
+h1,
+h2,
+h3,
+.actions,
+.panel {
+  padding: 0 $box-padding;
+}
